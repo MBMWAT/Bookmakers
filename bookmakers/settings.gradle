@@ -1,0 +1,4 @@
+rootProject.name = 'bookmakers'
+include 'mvc'
+include 'repository'
+
