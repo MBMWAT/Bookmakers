@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org".>
+
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+    <title>ROYAL BETS</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body class="con">
+  
+  
+    <div class="container-fluid">
+		
+		<!--upper part of the page-->
+		<div class="row" id="up">
+			
+			<!--left part - picture with logo-->
+			<div class="col-sm-1 mt-3">
+				<figure>
+					<img src="logo.png" class="logo">
+				</figure>
+			</div>
+			
+			<!--middle part - div with title, motto and buttons-->
+			<div class="col-sm-9 title">
+				<div>
+					<h1 class="text-left mt-4 font-italic">ROYAL BETS</h1>
+					<h5 class="text-right mt-1 mr-5 font-italic"><u>Jesteśmy tu bo potrzebujemy Twojej kasy</u></h5>
+				</div>
+				
+				<div class="buttons">
+
+					<form action="#" method="get" th:action="@{/tm}">
+						<input class="button_menu button" type="submit" value="Wyniki">
+					</form>
+
+					<form action="#" method="get" th:action="@{/tm}">
+						<input class="button_menu button" type="submit" value="Statystyki">
+					</form>
+
+					<input class="button_menu button" type="submit" value="Lokale">
+					<input class="button_menu button" type="submit" value="Płatności">
+					<input class="button_menu button" type="submit" value="Wypłaty">
+					<input class="button_menu button" type="submit" value="Zakłady">
+
+				</div>
+				
+			</div>
+
+			<!--right part - buttons for logging in and registration-->
+			<div class="col-sm-2">
+					<input class="button_login button" type="submit" value="Zaloguj się">
+					<br>
+					<input class="button_login button" type="submit" value="Zarejestruj się">
+			</div>
+
+		</div>
+
+		<!--the middle part-->
+		<div class="row">
+
+				<!--league names on the left-->
+				<div class="col-sm-2 leagues">
+
+					<p class="league_names">Ligi:</p>
+
+					<ul>
+						<li class="league_names" th:each="league: ${leagues}" th:text="${league.name}"></li>
+					</ul>
+
+				</div>
+
+				<!--recent game results on the middle-->
+				<div class="col-sm-8 recent_results">
+
+					<h2 class="text-center subtitle">Ostatnie wyniki</h2>
+
+                    <table>
+						<tr>
+							<th>Gospodarz</th>
+							<th>Gość</th>
+							<th>Gole gospodarza</th>
+							<th>Gole gościa</th>
+							<th>Liga</th>
+							<th>Data</th>
+						</tr>
+                        <tr th:each="game : ${games}">
+                            <td th:text="${game.homeTeam.name}"></td>
+                            <td th:text="${game.awayTeam.name}"></td>
+                            <td th:text="${game.goalsHomeTeam}"></td>
+                            <td th:text="${game.goalsAwayTeam}"></td>
+                            <td th:text="${game.league.name}"></td>
+                            <td th:text="${game.timestamp}"></td>
+                        </tr>
+					</table>
+
+				</div>
+
+				<!--our adverts on the right-->
+				<div class="col-sm-2 adds">
+
+					<figure>
+						<img src="add1.jpg" class="add">
+					</figure>
+
+					<figure>
+						<img src="add2.jpg" class="add">
+					</figure>
+
+					<figure>
+						<img src="add3.jpg" class="add">
+					</figure>
+
+				</div>
+				
+		</div>
+
+		<div class="row" id="footer">
+
+			<div class="col-sm-12 recent_results">
+				<h5>Wszystkie prawa mogłyby być zastrzeżone!</h5>
+			</div>
+
+		</div>
+
+	</div>
+	
+	
+	
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
