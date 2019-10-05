@@ -1,11 +1,16 @@
-package mbmwat.bookmakers.mvc;
+package mbmwat;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.time.LocalDate;
+
 @SpringBootApplication
-public class MvcApplication {
+public class GeneratorsApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(MvcApplication.class, args);
+        SpringApplication.run(GeneratorsApplication.class, args);
+
     }
+
 }

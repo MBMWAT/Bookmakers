@@ -1,0 +1,56 @@
+<html xmlns:th="http://www.thymeleaf.org" .>
+
+    <head>
+        <meta charset="UTF-8"/>
+    </head>
+
+    <body>
+
+    <!--upper part of the page-->
+    <div th:fragment="header" class="row" id="up">
+
+        <!--left part - picture with logo-->
+        <div class="col-sm-1 mt-3">
+            <figure>
+                <img src="logo.png" class="logo">
+            </figure>
+        </div>
+
+        <!--middle part - div with title, motto and buttons-->
+        <div class="col-sm-9 title">
+            <div>
+                <h1 class="text-left mt-4 font-italic">ROYAL BETS</h1>
+                <h5 class="text-right mt-1 mr-5 font-italic"><u>Jesteśmy tu bo potrzebujemy Twojej kasy</u></h5>
+            </div>
+
+            <div class="buttons">
+
+                <form action="#" method="get" th:action="@{/tm}">
+                    <input class="button_menu button" type="submit" value="Wyniki">
+                </form>
+
+                <form action="#" method="get" th:action="@{/tm}">
+                    <input class="button_menu button" type="submit" value="Statystyki">
+                </form>
+
+                <input class="button_menu button" type="submit" value="Lokale">
+                <input class="button_menu button" type="submit" value="Płatności">
+                <input class="button_menu button" type="submit" value="Wypłaty">
+                <input class="button_menu button" type="submit" value="Zakłady">
+
+            </div>
+
+        </div>
+
+        <!--right part - buttons for logging in and registration-->
+        <div class="col-sm-2">
+            <input class="button_login button" type="submit" value="Zaloguj się">
+            <br>
+            <input class="button_login button" type="submit" value="Zarejestruj się">
+        </div>
+
+    </div>
+
+    </body>
+
+</html>

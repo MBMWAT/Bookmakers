@@ -2,6 +2,7 @@ package mbmwat.bookmakers.repository.model;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import lombok.*;
@@ -25,7 +26,7 @@ public class Game implements Serializable {
     private Long goalsHomeTeam;
     @Column(name = "goals_away_team")
     private Long goalsAwayTeam;
-    private Timestamp timestamp;
+    private LocalDateTime date;
     private String winner;
 
     @ToString.Exclude

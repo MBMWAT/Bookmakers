@@ -5,7 +5,17 @@ plugins {
 group 'mbmwat'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 12
+
+subprojects{
+
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+}
 
 repositories {
     mavenCentral()

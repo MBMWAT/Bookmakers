@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org" .>
+
+<head>
+    <meta charset="UTF-8"/>
+</head>
+
+<body>
+
+    <!--league names on the left-->
+    <div th:fragment="leagues" class="col-sm-2 leagues">
+
+        <p class="league_names">Ligi:</p>
+
+        <ul>
+            <li class="league_names" th:each="league: ${leagues}" th:text="${league.name}"></li>
+        </ul>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,11 +1,13 @@
-package mbmwat.bookmakers.mvc;
+package mbmwat.model;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MvcApplication {
+public class ModelApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(MvcApplication.class, args);
+        SpringApplication.run(ModelApplication.class, args);
     }
+
 }
