@@ -1,7 +1,5 @@
 package mbmwat.bookmakers.mvc.controllers;
 
-
-
 import mbmwat.bookmakers.repository.model.Game;
 import mbmwat.bookmakers.repository.model.League;
 import mbmwat.generators.GamesGenerator;
@@ -10,14 +8,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 public class HomeController {
+
+    private GamesGenerator gamesGenerator;
+
+    public HomeController(GamesGenerator gamesGenerator) {
+        this.gamesGenerator = gamesGenerator;
+    }
 
     @RequestMapping("/")
     public String home(Model model){
@@ -35,8 +36,6 @@ public class HomeController {
         leagues.add(League.builder().name("Czeska").build());
         leagues.add(League.builder().name("Szwedzka").build());
         leagues.add(League.builder().name("Duńska").build());
-
-        GamesGenerator gamesGenerator = new GamesGenerator();
 
        List<Game> games =  gamesGenerator.generateGames();
 

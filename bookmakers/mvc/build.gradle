@@ -6,10 +6,9 @@ plugins {
 group 'mbmwat'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 11
+sourceCompatibility = 12
 
 dependencies {
-    compile project(':repository')
     compile project(':generators')
 /*    testCompile group: 'org.mockito', name: 'mockito-core', version: '3.0.0'
     testCompile group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.0.0'*/

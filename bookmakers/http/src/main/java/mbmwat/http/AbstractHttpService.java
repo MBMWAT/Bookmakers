@@ -1,12 +1,14 @@
 package mbmwat.http;
 
+import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 import java.net.ProxySelector;
 import java.net.http.HttpClient;
 import java.net.http.HttpResponse;
 import java.util.Optional;
 
-
+@Service
 public abstract class AbstractHttpService implements HttpService{
 
     @Override

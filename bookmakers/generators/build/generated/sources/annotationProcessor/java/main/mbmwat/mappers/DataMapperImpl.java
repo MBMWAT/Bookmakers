@@ -18,8 +18,8 @@ import mbmwat.model.api.Score;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2019-10-05T15:22:56+0200",
-    comments = "version: 1.3.0.Beta1, compiler: javac, environment: Java 12.0.1 (Oracle Corporation)"
+    date = "2019-10-06T18:50:30+0200",
+    comments = "version: 1.3.0.Beta1, compiler: javac, environment: Java 12.0.2 (Oracle Corporation)"
 )
 public class DataMapperImpl implements DataMapper {
 

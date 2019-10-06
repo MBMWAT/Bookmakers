@@ -5,7 +5,7 @@ plugins {
 
 group = 'mbmwat'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = 12
 
 bootJar {
     enabled = false
@@ -18,5 +18,6 @@ jar {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    compile group: 'com.github.ulisesbocchio', name: 'jasypt-spring-boot-starter', version: '2.1.2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

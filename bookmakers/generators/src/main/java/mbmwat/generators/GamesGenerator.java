@@ -2,17 +2,24 @@ package mbmwat.generators;
 
 import com.google.gson.Gson;
 import mbmwat.bookmakers.repository.model.Game;
-import mbmwat.http.HttpFootballMatchesService;
 import mbmwat.http.HttpService;
 import mbmwat.mappers.DataMapper;
 import mbmwat.model.api.MatchesData;
 import org.mapstruct.factory.Mappers;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class GamesGenerator {
+@Service
+public class GamesGenerator{
+
+    private HttpService httpService;
+
+    public GamesGenerator(HttpService httpService) {
+        this.httpService = httpService;
+    }
 
     public List<Game> generateGames(){
 
@@ -27,8 +34,6 @@ public class GamesGenerator {
     }
 
     private MatchesData getRecentMatchesDate(){
-
-        HttpService httpService = new HttpFootballMatchesService();
 
         String jsonBody = httpService
                 .get("https://api.football-data.org/v2/matches?dateFrom=" + LocalDate.now().minusDays(3) + "&dateTo=" + LocalDate.now())
